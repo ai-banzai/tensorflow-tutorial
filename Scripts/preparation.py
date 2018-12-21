@@ -2,6 +2,7 @@ import os.path
 import tensorflow as tf
 import scipy
 import skimage
+import numpy as np
 
 
 def load_data(data_directory):
@@ -24,6 +25,14 @@ train_data_directory = ROOT_PATH + "/TrafficSigns/Training"
 test_data_directory = os.path.join(ROOT_PATH, "TrafficSigns/Testing")
 
 images, labels = load_data(train_data_directory)
+images = np.array(images)
 
-print(images, labels)
+# Print the `images` dimensions
+print(images.ndim)
+
+# Print the number of `images`'s elements
+print(images.size)
+
+# Print the first instance of `images`
+
 
